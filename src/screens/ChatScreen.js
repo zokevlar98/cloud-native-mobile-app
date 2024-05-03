@@ -5,7 +5,7 @@ import Message from '../components/Message';
 import InputBox from '../components/InputBox';
 
 import bg from '../../assets/images/BG.png';
-import messages from '../../assets/data/messages.json';
+// import messages from '../../assets/data/messages.json';
 
 const ChatScreen = () => {
   const route = useRoute();
