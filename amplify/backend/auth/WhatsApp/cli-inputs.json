@@ -3,7 +3,7 @@
   "cognitoConfig": {
     "identityPoolName": "testAuthIdentityPool",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "whatsa51e7f776",
+    "resourceNameTruncated": "whatsab9ab2dd3",
     "userPoolName": "WhatsApp",
     "autoVerifiedAttributes": [
       "email"
@@ -25,9 +25,9 @@
     "userpoolClientRefreshTokenValidity": 30,
     "userpoolClientWriteAttributes": [],
     "userpoolClientReadAttributes": [],
-    "userpoolClientLambdaRole": "WhatsA51e7f776_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "WhatsAb9ab2dd3_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "51e7f776",
+    "sharedId": "b9ab2dd3",
     "resourceName": "WhatsApp",
     "authSelections": "identityPoolAndUserPool",
     "serviceName": "Cognito",
