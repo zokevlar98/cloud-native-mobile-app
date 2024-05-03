@@ -7,7 +7,7 @@ import LinkingConfiguration from './LinkingConfiguration';
 import { Octicons, MaterialCommunityIcons } from '@expo/vector-icons';
 import ChatScreen from '../screens/ChatScreen';
 import ContactsScreen from '../screens/ContactsScreen';
-import Colors from '../../constants/colors';
+import Colors from '../../constants/Colors';
 const Stack = createNativeStackNavigator();
 
 const Navigator = () => {
