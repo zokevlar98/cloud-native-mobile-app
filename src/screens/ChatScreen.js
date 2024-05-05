@@ -1,46 +1,39 @@
-import { useEffect } from 'react';
-import { ImageBackground, StyleSheet, FlatList, KeyboardAvoidingView } from 'react-native';
-import { useRoute, useNavigation } from '@react-navigation/native';
-import Message from '../components/Message';
-import InputBox from '../components/InputBox';
+import React, { useState } from 'react';
+import { Button, TextInput, View, StyleSheet, Text, ScrollView } from 'react-native';
 
-import bg from '../../assets/images/BG.png';
-// import messages from '../../assets/data/messages.json';
+export default function ChatScreen() {
+  const [message, setMessage] = useState('');
+  const [messages, setMessages] = useState([]);
 
-const ChatScreen = () => {
-  const route = useRoute();
-  const navigation = useNavigation();
-
-  useEffect(() => {
-    navigation.setOptions({ title: route.params.name });
-  }, [route.params.name]);
+  const sendMessage = () => {
+    setMessages(prevMessages => [...prevMessages, message]);
+    setMessage('');
+  };
 
   return (
-    <KeyboardAvoidingView
-      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-      keyboardVerticalOffset={Platform.OS === 'ios' ? 60 : 90}
-      style={styles.bg}
-    >
-      <ImageBackground source={bg} style={styles.bg}>
-        <FlatList
-          data={messages}
-          renderItem={({ item }) => <Message message={item} />}
-          style={styles.list}
-          inverted
-        />
-        <InputBox />
-      </ImageBackground>
-    </KeyboardAvoidingView>
+    <View style={styles.container}>
+      <ScrollView>
+        {messages.map((message, index) => (
+          <View key={index}>
+            <Text>{message}</Text>
+          </View>
+        ))}
+      </ScrollView>
+      <TextInput
+        value={message}
+        onChangeText={text => setMessage(text)}
+        onSubmitEditing={sendMessage}
+        placeholder="Type your message..."
+      />
+      <Button onPress={sendMessage} title="Send" />
+    </View>
   );
-};
+}
 
 const styles = StyleSheet.create({
-  bg: {
+  container: {
     flex: 1,
-  },
-  list: {
-    padding: 10,
+    justifyContent: 'center',
+    padding: 20,
   },
 });
-
-export default ChatScreen;

@@ -1,15 +1,18 @@
-import { FlatList } from 'react-native';
-// import chats from '../../assets/data/chats.json';
-import ContactListItem from '../components/ContactListItem';
+import React from 'react';
+import { View, Text, StyleSheet } from 'react-native';
 
-const ContactsScreen = () => {
+export default function ContactsScreen() {
   return (
-    <FlatList
-      data={chats}
-      renderItem={({ item }) => <ContactListItem user={item.user} />}
-      style={{ backgroundColor: 'white' }}
-    />
+    <View style={styles.container}>
+      <Text>This is the Contacts Screen</Text>
+    </View>
   );
-};
+}
 
-export default ContactsScreen;
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+});

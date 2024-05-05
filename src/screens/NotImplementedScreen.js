@@ -1,37 +1,18 @@
-// src/screens/NotImplementedScreen.js
+import React from 'react';
+import { View, Text, StyleSheet } from 'react-native';
 
-import { View, Text, Image, StyleSheet } from 'react-native';
-
-const NotImplementedScreen = () => {
+export default function NotImplementedScreen() {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Not Implemented!</Text>
-      <Image
-        source={{
-          uri: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/capybara+copy.png',
-        }}
-        style={styles.image}
-        resizeMode="contain"
-      />
+      <Text>This feature has not been implemented yet</Text>
     </View>
   );
-};
+}
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
     justifyContent: 'center',
-  },
-  text: {
-    fontSize: 18,
-    fontWeight: '500',
-    color: 'gray',
-  },
-  image: {
-    width: '80%',
-    aspectRatio: 2 / 1,
+    alignItems: 'center',
   },
 });
-
-export default NotImplementedScreen;
