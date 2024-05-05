@@ -1,17 +1,15 @@
 import React from 'react';
+import { StatusBar } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createStackNavigator } from '@react-navigation/stack';
 import 'react-native-gesture-handler';
-import NavigationStack from './navigation';
-
-const Tab = createBottomTabNavigator();
+import Routes from './src/routes';
+import Header from './src/components/Header/index';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <Tab.Navigator>
-        <Tab.Screen name="Home" component={NavigationStack} />
-      </Tab.Navigator>
-    </NavigationContainer>
+      <Routes />
+  
   );
 }
